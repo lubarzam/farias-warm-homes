@@ -1,13 +1,13 @@
 
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import WhatsAppFloat from './components/WhatsAppFloat';
-import Services from './components/Services';
-import Gallery from './components/Gallery';
-import Profile from './components/Profile';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Header from './components/Header.jsx';
+import Hero from './components/Hero.jsx';
+import WhatsAppFloat from './components/WhatsAppFloat.jsx';
+import Services from './components/Services.tsx';
+import Gallery from './components/Gallery.tsx';
+import Profile from './components/Profile.tsx';
+import Contact from './components/Contact.tsx';
+import Footer from './components/Footer.tsx';
 import './App.css';
 
 function App() {
