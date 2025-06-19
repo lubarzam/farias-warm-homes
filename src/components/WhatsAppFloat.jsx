@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import './WhatsAppFloat.css';
 
 const WhatsAppFloat = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,17 +16,18 @@ const WhatsAppFloat = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
+    <div className="whatsapp-float">
       <a
         href="https://wa.me/56912345678?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios"
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover-lift animate-float"
+        className="whatsapp-button"
       >
         {/* WhatsApp Icon */}
-        <div className="w-14 h-14 flex items-center justify-center rounded-full">
+        <div className="whatsapp-icon">
           <svg
-            className="w-8 h-8"
+            width="32"
+            height="32"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -34,19 +36,17 @@ const WhatsAppFloat = () => {
         </div>
 
         {/* Message bubble (hidden on mobile, shown on hover on desktop) */}
-        <div className="hidden lg:block max-w-0 group-hover:max-w-xs transition-all duration-300 overflow-hidden">
-          <div className="pl-2 pr-4 py-2 whitespace-nowrap">
-            <span className="text-sm font-medium">¡Hola! ¿En qué te podemos ayudar?</span>
-          </div>
+        <div className="whatsapp-message-desktop">
+          <span>¡Hola! ¿En qué te podemos ayudar?</span>
         </div>
       </a>
 
       {/* Mobile message bubble */}
-      <div className="lg:hidden absolute bottom-16 right-0 bg-white rounded-lg shadow-lg p-3 max-w-xs animate-fade-in">
-        <div className="text-sm text-gray-800">
+      <div className="whatsapp-message-mobile">
+        <div className="message-content">
           <strong>¡Hola!</strong> ¿En qué te podemos ayudar?
         </div>
-        <div className="absolute bottom-0 right-4 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white transform translate-y-full"></div>
+        <div className="message-arrow"></div>
       </div>
     </div>
   );

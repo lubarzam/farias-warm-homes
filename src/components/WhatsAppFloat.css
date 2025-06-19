@@ -1,0 +1,112 @@
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  background: #25d366;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+  transition: var(--transition);
+  text-decoration: none;
+  overflow: hidden;
+  animation: float 3s ease-in-out infinite;
+}
+
+.whatsapp-button:hover {
+  background: #128c7e;
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+  transform: translateY(-2px);
+}
+
+.whatsapp-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.whatsapp-message-desktop {
+  max-width: 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.whatsapp-button:hover .whatsapp-message-desktop {
+  max-width: 300px;
+  padding-left: 8px;
+  padding-right: 16px;
+}
+
+.whatsapp-message-desktop span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.whatsapp-message-mobile {
+  position: absolute;
+  bottom: 72px;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
+  padding: 12px 16px;
+  max-width: 200px;
+  animation: fadeIn 0.5s ease-out 0.5s both;
+}
+
+.message-content {
+  font-size: 0.875rem;
+  color: var(--gray-dark);
+  line-height: 1.4;
+}
+
+.message-arrow {
+  position: absolute;
+  bottom: -8px;
+  right: 16px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white;
+}
+
+@media (min-width: 1024px) {
+  .whatsapp-message-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .whatsapp-message-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .whatsapp-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .whatsapp-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
